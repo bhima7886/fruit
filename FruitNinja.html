@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ninja.css">
+</head>
+<body>
+    <input type="button" value="start" id="btn1"/>
+        <input type="button" value="stop" id="btn2"/>
+    <svg id="svg"  height="700px"  style="border: 2px solid black;" >
+       
+        <!--First created four circles-->
+        <circle id="c1" cx="70px" cy="50px" r="40" stroke="yellow" fill="none">  </circle>
+        <circle id="c2" cx="160px" cy="50px" r="40" stroke="grey" fill="black"></circle>
+        <circle id="c3"  cx="250px" cy="50px" r="40" stroke="blue" fill="none"></circle>
+        <circle id="c4"  cx="340px" cy="50px" r="40" stroke="violet" fill="none"></circle>
+        <circle  id="c5" cx="430px" cy="50px" r="40" stroke="yellow "fill="none"></circle>
+
+        
+     
+    
+    </svg>
+  
+    <audio  id="a1" >
+        <source src="./images/katnaNotificationMusic.mp3">
+    </audio>
+   <audio id="a2">
+    <source src="./images/Freddy_Fazbear_Theme(256k).mp3">
+   </audio>
+    
+    <div id="d1">
+      
+    </div>
+    <div id="d2">
+       
+    </div>
+    
+<script type="text/javascript">
+    var d1=document.getElementById("d1"); /* div id*/
+   var btn1=document.getElementById("btn1"); /*button id*/
+   var a1=document.getElementById("a1"); /* audio id*/
+   var a2=document.getElementById("a2"); /*audio id2
+   /*  created all circles id */
+   var btn2=document.getElementById("btn2"); //btn1 id
+   var d1=document.getElementById("d1");
+   var c1=document.getElementById("c1");
+   var c2=document.getElementById("c2");
+   var c3=document.getElementById("c3");
+   var c4=document.getElementById("c4");
+   var c5=document.getElementById("c5");
+
+ 
+   /* Create Start Button click the button game will be start */
+   btn1.addEventListener("click",function()
+   {
+     a2.play();
+    c1.style.animation="c1 5s linear infinite";
+   c2.style.animation="c2 5s 2s linear infinite";
+   c3.style.animation="c2 11s 1s  linear infinite";
+    c4.style.animation="c2 3s 2s linear infinite";
+    c5.style.animation="c2 5s 1s linear infinite";
+  
+    
+    var points=0;
+   
+   /* click the particular circle points will be increased*/
+   c1.addEventListener("click",function()
+   {
+      points++;
+     
+      d1.innerHTML="Points="+points;
+    
+
+      a1.play();
+      
+   })
+   c2.addEventListener("click",function()
+   {
+    a2.pause();
+    c1.style.animation="";
+   c2.style.animation="";
+   c3.style.animation="";
+    c4.style.animation="";
+    c5.style.animation="";
+  
+   
+    d1.innerHTML="Points="+"0";
+  
+    a1.play();
+    alert("you lose the game");
+   })
+   c3.addEventListener("click",function()
+   {
+    points++;
+    d1.innerHTML="Points="+points;
+    a1.play();
+   })
+  
+   c4.addEventListener("click",function()
+   {
+    points++;
+    d1.innerHTML="Points="+points;
+    a1.play();
+   })
+   c5.addEventListener("click",function()
+   {
+    points++;
+    d1.innerHTML="Points="+points;
+    a1.play();
+   })
+ 
+ 
+   
+   })
+   btn2.addEventListener("click",function()
+   {
+    a2.pause();
+    c1.style.animation="";
+   c2.style.animation="";
+   c3.style.animation="";
+    c4.style.animation="";
+    c5.style.animation="";
+   
+   })
+
+
+
+
+
+
+
+  </script>
+    
+    
+
+</body>
+</html>
